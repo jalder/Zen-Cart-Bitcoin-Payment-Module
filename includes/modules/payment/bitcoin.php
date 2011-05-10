@@ -76,7 +76,9 @@
 
 		$bitcoin = new jsonRPCClient('http://'.MODULE_PAYMENT_BITCOIN_LOGIN.':'.MODULE_PAYMENT_BITCOIN_PASSWORD.'@'.MODULE_PAYMENT_BITCOIN_HOST.'/'); 
 
-		if(!$bitcoin->getinfo()){
+		try {
+			$bitcoin->getinfo();
+		} catch (Exception $e) {
 			$confirmation = array('title'=>'Error: Bitcoin server is down.  Please email system administrator regarding your order after confirmation.');
 			return $confirmation;
 		}
@@ -103,7 +105,9 @@
 
 		$bitcoin = new jsonRPCClient('http://'.MODULE_PAYMENT_BITCOIN_LOGIN.':'.MODULE_PAYMENT_BITCOIN_PASSWORD.'@'.MODULE_PAYMENT_BITCOIN_HOST.'/'); 
 
-		if(!$bitcoin->getinfo()){
+    	try {
+			$bitcoin->getinfo();
+		} catch (Exception $e) {
 			$confirmation = array('title'=>'Error: Bitcoin server is down.  Please email system administrator regarding your order after confirmation.');
 			return $confirmation;
 		}
