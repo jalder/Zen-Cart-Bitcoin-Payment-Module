@@ -49,36 +49,40 @@
 		<tr class="dataTableHeadingRow"><td class="dataTableHeadingContent" align="center">Account</td><td class="dataTableHeadingContent">Address</td><td class="dataTableHeadingContent">Balance</td></tr>
 		
 		<?php
-		if(!$bitcoin->getinfo()){
-			$confirmation = array('title'=>'Error: Bitcoin server is down.  Please email system administrator regarding your order after confirmation.');
-			return $confirmation;
+		try {
+			$bitcoin->getinfo();
+		} catch (Exception $e) {
+			echo 'Error: Bitcoin server is down.  Please email system administrator.';
+			$down = true;
 		}
-		global $db;
-		$accounts = $bitcoin->listaccounts();
-		$count = 0;
-		foreach($accounts as $a=>$t){
-			if($a!==''){
-				$bc = $bitcoin->getaddressesbyaccount($a);
-				print('<tr><td align="left">'.$a.'</td><td border="1px">');
-				foreach($bc as $b){
-					$v = $bitcoin->getreceivedbyaddress($b);
-
-					print($b.'<br />');
-					$sql = 'SELECT * FROM '.TABLE_ORDERS_STATUS_HISTORY.' AS osh LEFT JOIN '.TABLE_ORDERS_STATUS.' AS os ON os.orders_status_id = osh.orders_status_id WHERE os.orders_status_name = "'.Pending.'" AND osh.comments LIKE "%'.$b.'%"';
-					$result = $db->Execute($sql);
-					if ($result->RecordCount() > 0) {
-					  while (!$result->EOF) {
-					  	$sql = 'SELECT * FROM '.TABLE_ORDERS.' LEFT JOIN '.TABLE_ORDERS_STATUS.' on orders_status_id WHERE orders_id = '.$result->fields['orders_id'].'';
-					  	$order = $db->Execute($sql);
-					  	
-					    echo '<a href="'.zen_href_link('orders.php?page=1&oID='.$result->fields['orders_id'].'&action=edit', '', 'NONSSL').'">Order '.$result->fields['orders_id'].'</a> | Due '.$order->fields['order_total'].'BTC | Received '.$v.'BTC  | '.$result->fields['orders_status_name'].'<br />';
-					    $result->MoveNext();
-					  }
+		if(!$down){
+			global $db;
+			$accounts = $bitcoin->listaccounts();
+			//print_r($accounts);
+			$count = 0;
+			foreach($accounts as $a=>$t){
+				//if($a!==''){
+					$bc = $bitcoin->getaddressesbyaccount($a);
+					print('<tr><td align="left">'.$a.'</td><td border="1px">');
+					foreach($bc as $b){
+						$v = $bitcoin->getreceivedbyaddress($b);
+						print($b.'<br />');
+						$sql = 'SELECT * FROM '.TABLE_ORDERS_STATUS_HISTORY.' AS osh LEFT JOIN '.TABLE_ORDERS_STATUS.' AS os ON os.orders_status_id = osh.orders_status_id WHERE os.orders_status_name = "'.Pending.'" AND osh.comments LIKE "%'.$b.'%"';
+						$result = $db->Execute($sql);
+						if ($result->RecordCount() > 0) {
+						  while (!$result->EOF) {
+						  	$sql = 'SELECT * FROM '.TABLE_ORDERS.' LEFT JOIN '.TABLE_ORDERS_STATUS.' on orders_status_id WHERE orders_id = '.$result->fields['orders_id'].'';
+						  	$order = $db->Execute($sql);
+						  	
+						    echo '<a href="'.zen_href_link('orders.php?page=1&oID='.$result->fields['orders_id'].'&action=edit', '', 'NONSSL').'">Order '.$result->fields['orders_id'].'</a> | Due '.$order->fields['order_total'].'BTC | Received '.$v.'BTC  | '.$result->fields['orders_status_name'].'<br />';
+						    $result->MoveNext();
+						  }
+						}
+						
+						$count++;
 					}
-					
-					$count++;
-				}
-				print('</td><td>'.$t.'BTC</td></tr>');
+					print('</td><td>'.$t.'BTC</td></tr>');
+				//}
 			}
 		}
 		?>
