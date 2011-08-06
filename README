@@ -4,8 +4,7 @@ Move files into zencart installation root.  Move file under admin to whatever yo
 
 
 If you are feeling generous, you can donate to:
-1LSdyr2TQNkZvu3L1Km47dmdWgMnCq1jJL
-
+1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
 
 
 Someone pointed out that includes/boxes/extra_boxes/bitcoin_extras_dhtml.php needed to be put under your [admin] directory.  This is true.  The structure will be corrected ASAP.
