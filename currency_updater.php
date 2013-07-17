@@ -73,6 +73,7 @@ function mtgox_query($path, array $req = array()) {
 
 //bit of math
 
+/* Note: "warning":"THIS API IS DEPRECATED. Please upgrade to newer API such as https:\/\/data.mtgox.com\/api\/2\/BTCUSD\/money\/ticker" */
 $mtgox_array = mtgox_query('0/ticker.php?Currency='.DEFAULT_SYMBOL);
 $newrate = (1 / (($mtgox_array["ticker"][WHICH_VALUE]) * EXCHANGE_FEE));
 
