@@ -1,16 +1,8 @@
 Original package by jalder (https://github.com/jalder).
+Mtgox currency updater by adiow (https://github.com/adiow/)
 
-Added a currency updater (must be run as cron-job or similar) 
-Added some SQL-Stuff to /admin/bitcoin.php so orders not in "Processing" are not shown in the admin center. 
-Added some math-stuff to /admin/bitcoin.php so that base currency is multiplied with BTC-value. This fixes false values if BTC is not your base currency. 
-
-Move files to correct directorys. 
-Edit settings in "currency_updater.php", you will need a mtgox-account to request API-stuff. 
-Setup cron-job (or similar if you run the Microsoft mongrel) to execute currency-updater.php every day or hour or so... 
-
-???
-
-Profit
+Updated currency updater to support mtgox new data server
+Placed note to inform of deprecated api version.
 
 If you feel generous, donate to jalder who did 99% of the work.
 You can donate to me too :D 
@@ -18,5 +10,3 @@ You can donate to me too :D
 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
 
 
-have fun 
-adiow
