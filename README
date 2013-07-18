@@ -2,26 +2,21 @@ Original package by jalder (https://github.com/jalder).
 Mtgox currency updater by adiow (https://github.com/adiow/).
 Moddified, adjusted and updated by MasterX1582 (https://github.com/MasterX1582).
 
-<<<<<<< HEAD
-Move files into zencart installation root.  Move file under admin to whatever your zen cart custom admin directory is.  
 
+Move files into zencart installation root.  Move file under admin to whatever your zen cart custom admin directory is.  
 Enable in payment modules and enter your bitcoind rpc information.  
 Under admin->reports navigation you will find a link "Bitcoin Payment" to view admin/bitcoin.php which lists all accounts, payments made, and invoice balance for easy order/payment review.
 
 Created static link under admin->reports to view bitcoin payments recieved.
 The default link under extra was not working for me so therefore i added this ((admin->reports)+(wich i found to be a more suitable place also)) one.
 
-If you are feeling generous, you can donate to:
-Jalder      (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module):       1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
-MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/): 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
-=======
-Updated currency updater to support mtgox new data server
+Updated currency updater to support mtgox new data server.
 Placed note to inform of deprecated api version.
 
 If you are feeling generous, you can donate to:
-Jalder      (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module):       1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
-Adiow       (https://github.com/adiow/Zen-Cart-Bitcoin-Payment-Module/):       15KgcvYosY1ZTU8tCPu2puqjDqrNk4E1Tj 
 MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/): 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
+Adiow       (https://github.com/adiow/Zen-Cart-Bitcoin-Payment-Module/):       15KgcvYosY1ZTU8tCPu2puqjDqrNk4E1Tj 
+Jalder      (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module):       1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
 
 
->>>>>>> origin/with_mtgoxupdater
+
