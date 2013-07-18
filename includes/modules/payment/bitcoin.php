@@ -1,9 +1,16 @@
 <?php
 /**
- * Bitcoin Payment Module
  *
+ * Bitcoin Payment Module
+ * 
  * @package paymentMethod
- */
+ *
+ *  Author: Jalder (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Moddified by:  MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Donations: 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
+ *
+ **/
+ 
   class bitcoin {
     var $code, $title, $description, $enabled, $payment;
 
@@ -160,3 +167,4 @@
       return array('MODULE_PAYMENT_BITCOIN_STATUS', 'MODULE_PAYMENT_BITCOIN_ZONE', 'MODULE_PAYMENT_BITCOIN_ORDER_STATUS_ID', 'MODULE_PAYMENT_BITCOIN_SORT_ORDER', 'MODULE_PAYMENT_BITCOIN_LOGIN', 'MODULE_PAYMENT_BITCOIN_HOST', 'MODULE_PAYMENT_BITCOIN_PASSWORD');
     }
   }
+ 

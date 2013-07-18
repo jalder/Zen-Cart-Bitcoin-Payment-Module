@@ -1,7 +1,15 @@
 <?php
 /**
- * @package admin
- */
+ *
+ * Bitcoin Payment Module
+ * 
+ * @package paymentMethod
+ *
+ *  Author: Jalder (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Moddified by:  MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Donations: 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
+ *
+ **/
 
   require('includes/application_top.php');
 
@@ -71,10 +79,10 @@
 						$result = $db->Execute($sql);
 						if ($result->RecordCount() > 0) {
 						  while (!$result->EOF) {
-						  	$sql = 'SELECT * FROM '.TABLE_ORDERS.' LEFT JOIN '.TABLE_ORDERS_STATUS.' on orders_status_id WHERE orders_id = '.$result->fields['orders_id'].'';
+						  	$sql = 'SELECT * FROM '.TABLE_ORDERS.' LEFT JOIN '.TABLE_ORDERS_STATUS.' on orders_status_id WHERE orders_id = '.$result->fields['orders_id'].' AND orders_status = "1"'; 
 						  	$order = $db->Execute($sql);
 						  	
-						    echo '<a href="'.zen_href_link('orders.php?page=1&oID='.$result->fields['orders_id'].'&action=edit', '', 'NONSSL').'">Order '.$result->fields['orders_id'].'</a> | Due '.$order->fields['order_total'].'BTC | Received '.$v.'BTC  | '.$result->fields['orders_status_name'].'<br />';
+						    echo '<a href="'.zen_href_link('orders.php?page=1&oID='.$result->fields['orders_id'].'&action=edit', '', 'NONSSL').'">Order '.$result->fields['orders_id'].'</a> | Due '.($order->fields['order_total'] * $order->fields['currency_value']).' BTC | Received '.$v.' BTC  | '.$result->fields['orders_status_name'].'<br />'; 
 						    $result->MoveNext();
 						  }
 						}
