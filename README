@@ -1,5 +1,6 @@
 Original package by jalder (https://github.com/jalder).
-Mtgox currency updater by adiow (https://github.com/adiow/)
+Mtgox currency updater by adiow (https://github.com/adiow/).
+Moddified, adjusted and updated by MasterX1582 (https://github.com/MasterX1582).
 
 Updated currency updater to support mtgox new data server
 Placed note to inform of deprecated api version.

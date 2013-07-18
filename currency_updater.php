@@ -1,5 +1,15 @@
 <?php
- 
+/**
+ *
+ * Bitcoin Payment Module
+ * 
+ * @package paymentMethod
+ *
+ *  Author: Adiow (https://github.com/adiow/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Moddified by:  MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/)
+ *  Donations: 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
+ *
+ **/
 
 #Script patched together from snippets of code I found on the web. Adrian Golser, Sept. 2012.
 #Enter defining data at beginning, make sure mtgox-api returns correct value and set up a cron-job to execute
