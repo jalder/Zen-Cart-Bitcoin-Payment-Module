@@ -2,6 +2,8 @@ Installation:
 
 Move files into zencart installation root.  Move file under admin to whatever your zen cart custom admin directory is.  Enable in payment modules and enter your bitcoind rpc information.  Under admin->extras navigation you will find a link to view admin/bitcoin.php which lists all accounts, payments made, and invoice balance for easy order/payment review.
 
+Created static link under reports menu to view bitcoin payments recieved.
+
 If you are feeling generous, you can donate to:
 Jalder      (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module):       1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
 MasterX1582 (https://github.com/MasterX1582/Zen-Cart-Bitcoin-Payment-Module/): 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
