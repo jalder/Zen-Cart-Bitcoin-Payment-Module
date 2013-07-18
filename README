@@ -6,7 +6,7 @@ Enable in payment modules and enter your bitcoind rpc information.
 Under admin->reports navigation you will find a link "Bitcoin Payment" to view admin/bitcoin.php which lists all accounts, payments made, and invoice balance for easy order/payment review.
 
 Created static link under admin->reports to view bitcoin payments recieved.
-The default link under extra was not working for me so therefore i added this one (wich i found to be a more suitable place also).
+The default link under extra was not working for me so therefore i added this ((admin->reports)+(wich i found to be a more suitable place also)) one.
 
 If you are feeling generous, you can donate to:
 Jalder      (https://github.com/jalder/Zen-Cart-Bitcoin-Payment-Module):       1GLXbvBtipcPkJ2UhMp4y3pY5i1kNYD9Bt
