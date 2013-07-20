@@ -25,10 +25,10 @@ define('BTCEXCHANGE', 'btce'); 	// Wich Exchange are we using?
 
 # Set this to the physical path of your installation.
 # Make sure to include the trailing "/"
-define('PATH_TO_STORE_ROOT','/var/zpanel/hostdata/megax/public_html/electro_megaxnetwork_com/');
+define('PATH_TO_STORE_ROOT','/home/user/zen/');
 
 
-#Settings for rate calculation: (typical btce-api-output: {"ticker":{"high":8.79,"low":8.40145,"avg":8.583123374,"vwap":8.56141034,"vol":2342,"last_all":8.679,"last_local":8.679,"last":8.679,"buy":8.59688,"sell":8.679}}
+#Settings for rate calculation: (typical api-output: {"ticker":{"high":8.79,"low":8.40145,"avg":8.583123374,"vwap":8.56141034,"vol":2342,"last_all":8.679,"last_local":8.679,"last":8.679,"buy":8.59688,"sell":8.679}}
 define('WHICH_VALUE','avg');
 
 define('DEFAULT_SYMBOL','USD');
