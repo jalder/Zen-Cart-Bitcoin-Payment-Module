@@ -13,7 +13,8 @@
 **/ 
 
 #Script patched together from snippets of code I found on the web. Adrian Golser, Sept. 2012.
-#Enter defining data at beginning, make sure btce-api returns correct value and set up a cron-job to execute
+#Script moddified to add support for btc-e and updated mtgox api url. Davy Moedbeck (MasterX1582), July 20 2013.
+#Enter defining data at beginning, make sure exchange api returns correct value and set up a cron-job to execute
 #according to preferences.
 
 define('BTCEXCHANGE', 'btce'); 	// Wich Exchange are we using? 
