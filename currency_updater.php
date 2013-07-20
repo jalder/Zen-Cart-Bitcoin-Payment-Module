@@ -107,8 +107,8 @@ if (BTCEXCHANGE == 'mtgox'){
 $newrate = (1 / (($exchange_array["ticker"][WHICH_VALUE]) * EFEE));
 
 //uncomment for testing
-return (var_dump((float)($exchange_array["ticker"][WHICH_VALUE])));
-return (var_dump($newrate));
+//return (var_dump((float)($exchange_array["ticker"][WHICH_VALUE])));
+//return (var_dump($newrate));
 
 
 //Time to punch this into the database
