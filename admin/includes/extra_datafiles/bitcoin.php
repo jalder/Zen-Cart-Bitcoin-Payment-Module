@@ -10,8 +10,7 @@
  *  Donations: 1JBKYhNvF1B8eLEcCUq3jw8wvrzDCPCGiB
  *
  **/
-
-  define('MODULE_PAYMENT_BITCOIN_TEXT_TITLE', 'Bitcoin Payment');
-  define('MODULE_PAYMENT_BITCOIN_TEXT_DESCRIPTION', 'Collect payments using bitcoin p2p network.');
-  define('MODULE_PAYMENT_BITCOIN_TEXT_EMAIL_FOOTER', 'Payed with Bitcoins - Thanks for the support!');
-?>
+if (!defined('IS_ADMIN_FLAG')) {
+	die('Illegal Access');
+}
+define('FILENAME_PAYMENT_BITCOIN', 'bitcoin');
